@@ -1,5 +1,5 @@
 // Set the target date (replace with your friend's birthday)
-const targetDate = new Date('2023-06-29T00:00:00');
+const targetDate = new Date().getTime() + 60000;
 
 // Get the countdown element
 const countdownElement = document.getElementById('countdown');
