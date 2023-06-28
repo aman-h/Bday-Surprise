@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #F4F4F4;
+            overflow: hidden;
+        }
+
+        #balloons {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            animation: float 8s infinite;
+        }
+
+        .balloon {
+            position: absolute;
+            background-image: url('balloon.png'); /* Replace with your balloon image URL */
+            background-size: contain;
+            width: 100px; /* Adjust size as needed */
+            height: 150px;
+            animation: balloonFloat 8s infinite;
+        }
+
+        #happyBirthday {
+            font-size: 72px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 40vh;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes balloonFloat {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(20px) translateY(-20px);
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="countdown-container">
-        <h1>Countdown</h1>
-        <div id="countdown"></div>
-        <div id="balloons"></div>
-        <div id="decorations"></div>
-        <div id="message"></div>
+    <div id="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <!-- Add more balloons as needed -->
     </div>
+    <h1 id="happyBirthday">Happy Birthday!</h1>
 
-    <script src="script.js"></script>
+    <script>
+        // Optional: Add more balloons randomly
+        function addBalloonsRandomly() {
+            const balloonContainer = document.getElementById('balloons');
+
+            for (let i = 0; i < 20; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + '%';
+                balloon.style.animationDelay = Math.random() * 8 + 's';
+                balloonContainer.appendChild(balloon);
+            }
+        }
+
+        // Uncomment the line below to add more balloons randomly
+        // addBalloonsRandomly();
+    </script>
 </body>
 </html>
