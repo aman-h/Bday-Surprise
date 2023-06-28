@@ -36,3 +36,32 @@ h1 {
     font-weight: bold;
     color: #333;
 }
+
+@keyframes balloon-float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes decoration-appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-balloons {
+    animation: balloon-float 1s ease-in-out infinite;
+}
+
+.animate-decorations {
+    animation: decoration-appear 1s ease-in-out;
+}
