@@ -1,5 +1,5 @@
-// Set the target date (replace with your friend's birthday)
-const targetDate = new Date().getTime() + 60000;
+// Set the target time to one minute from the current time
+const targetTime = new Date().getTime() + 60000; // 60,000 milliseconds = 1 minute
 
 // Get the countdown element
 const countdownElement = document.getElementById('countdown');
@@ -8,11 +8,11 @@ const countdownElement = document.getElementById('countdown');
 const countdownInterval = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
-    // Get the current date and time
-    const currentDate = new Date();
+    // Get the current time
+    const currentTime = new Date().getTime();
 
     // Calculate the time difference in seconds
-    const timeDiff = Math.floor((targetDate - currentDate) / 1000);
+    const timeDiff = Math.floor((targetTime - currentTime) / 1000);
 
     if (timeDiff < 0) {
         // Countdown is over, display a message
@@ -22,13 +22,11 @@ function updateCountdown() {
         showMessage();
     } else {
         // Calculate the remaining time
-        const days = Math.floor(timeDiff / (24 * 60 * 60));
-        const hours = Math.floor((timeDiff % (24 * 60 * 60)) / (60 * 60));
-        const minutes = Math.floor((timeDiff % (60 * 60)) / 60);
+        const minutes = Math.floor(timeDiff / 60);
         const seconds = Math.floor(timeDiff % 60);
 
         // Display the remaining time
-        countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownElement.textContent = `${minutes}m ${seconds}s`;
     }
 }
 
@@ -41,6 +39,4 @@ function showBalloonsAndDecorations() {
 }
 
 function showMessage() {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = 'Wishing you a fantastic birthday!';
-}
+    const messageElement = document.getElementById('message
