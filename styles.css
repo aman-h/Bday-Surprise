@@ -1,0 +1,38 @@
+body {
+    background-color: #f1f1f1;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.countdown-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+}
+
+#countdown {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#balloons {
+    margin-bottom: 20px;
+}
+
+#decorations {
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
